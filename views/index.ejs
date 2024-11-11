@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Family to do list App">
+        <meta name="keywords" content="to do list, lists , family ">
+        <meta name="author" content="Monica Spycher">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/main.css" />   
+        <title>To Do List</title>
+    </head>
+    <body>  
+        <!-- Users bar -->
+        <div class="container">     
+          <div class="row">
+            <div class="col-sm-12">
+              <form class="tab-view"  action="/user" method="post">
+                <% users.forEach(function(user) { %>
+                    <input type="submit" name="user" value="<%= user.id %>" id="<%= user.id %>">
+                    <label for="<%= user.id %>" style="background-color: <%= user.color %>;">
+                    <%= user.users_name %>
+                    </label>
+                <% }); %>
+                <input type="submit" name="add" value="new" id="tab" >
+                <label for="tab">Add User</label>
+                <!-- <input type="submit" name="editUser" value="editUser" id="tab3">
+                <label for="tab3">Edit User</label> -->
+                <input type="submit" name="removeUser" value="removeUser" id="tab2">
+                <label for="tab2">Delete User</label>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lists -->
+        <div class="container">     
+          <div class="row">
+            <% for(let list of lists){%>
+              <div class="col-sm-4">
+                <div class="list" >
+                  <!-- Lists title  -->
+                  <div class="box" id="heading" style="background-color:<%=list.color%>;">
+                      <!-- Title  -->
+                        <h1 id="editListName<%=list.id%>" >
+                          <%= list.lists_name %>
+                        </h1>
+                        <!-- Edit  -->
+                        <div class="listEdit">
+                          <form  action="/editList" method="post">
+                              <input type="hidden" name="updatedListId" value="<%= list.id %>">
+                              <input class="editList" id="inputList<%=list.id%>" type="text" name="updatedListName" value="<%= list.lists_name %>"placeholder="..." autocomplete="off"
+                                autofocus="true" hidden="true" required/>   
+                              <button id="doneList<%=list.id%>" type="submit" hidden="true"><img class="icon"
+                                  src="/assets/icons/check-solid.svg" alt="tick image" ></button>
+                          </form>
+                          <button id="editList<%=list.id%>"  onclick="handler2('<%=list.id%>')"><img class="icon"
+                              src="/assets/icons/pencil-solid.svg" alt="pencil image"></button>
+                        </div>
+                        <!-- Lists Delete -->
+                        <form class="listDelete" action="/deleteList" method="post">
+                          <input type="hidden" name="listId" value=<%=list.id%>>  
+                          <button  type="submit" name="deleteListName" value=<%=list.lists_name %> style="color: <%=list.color%>" >-</button>
+                      </form>
+                  </div> 
+                  
+                  <!-- Litst Items     -->
+                  <div class="box">
+                        <% for(let item of listItems){%>
+                          <% if (list.id==item.lists_id){ %>
+                            <!-- Items  -->
+                            <div class="item">
+                              <!-- Delete item  -->
+                              <form action="/delete/" method="post">
+                                <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item.id %>">
+                              </form>
+                              <p id="title<%=item.id%>">
+                                <%= item.title %>
+                                <br>
+                                <%=item.creation_date%>
+                              </p>
+                              <!-- Edit item  -->
+                              <form class="edit" action="/edit" method="post">
+                                <input type="hidden" name="updatedItemId" value="<%= item.id %>">
+                                <input id="input<%=item.id%>" type="text" name="updatedItemTitle" value="<%= item.title %>" autocomplete="off"
+                                  autofocus="true" hidden="true" required/>
+                                <button id="done<%=item.id%>" class="edit" type="submit" hidden><img class="icon"
+                                    src="/assets/icons/check-solid.svg" alt="tick image" ></button>
+                              </form>
+                              <button id="edit<%=item.id%>" class="edit" onclick="handler('<%=item.id%>')"><img class="icon"
+                                  src="/assets/icons/pencil-solid.svg" alt="pencil image"></button>
+                            </div>
+                          <% }} %>
+                          <!-- Add item -->
+                          <form class="item addItem" action="/add" method="post">
+                              <input type="hidden" name="listId" value=<%=list.id%>>
+                              <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true" required />
+                              <button class="add" type="submit" name="list" value=<%=list.lists_name %> style=" background-color: <%=list.color%>" >+</button>
+                          </form>      
+                  </div>   
+                </div> 
+              </div>
+            <%}%>
+          </div>   
+        </div>
+
+        <br>
+
+        <!-- Add New List  -->
+        <div class="newList container">     
+          <div class="row">
+            <div class="col-sm-12">
+              <form class="tab-view" action="/newList" method="post">
+                  <input type="submit" name="addList" value="newList" id="tab3">
+                  <label for="tab3">Add New List</label>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <footer class="container">
+            Monica Spycher Copyright © <%= new Date().getFullYear() %>
+        </footer>
+
+        <!-- Js function scrips  -->
+        <script>
+          function handler(id) {
+                document.getElementById("title" + id).setAttribute("hidden", true)
+                document.getElementById("edit" + id).setAttribute("hidden", true)
+                document.getElementById("done" + id).removeAttribute("hidden")
+                document.getElementById("input" + id).removeAttribute("hidden")
+          }
+          function handler2(id) {
+                document.getElementById("inputList" + id).removeAttribute("hidden")
+                document.getElementById("doneList" + id).removeAttribute("hidden")
+                document.getElementById("editListName" + id).setAttribute("hidden", true)
+                document.getElementById("editList" + id).setAttribute("hidden", true)
+          }
+          
+        </script>
+        
+        <!-- Bootstrap JS scripts   -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

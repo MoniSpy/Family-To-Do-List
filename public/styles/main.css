@@ -1,0 +1,270 @@
+
+/* General  */
+html {
+    background-color: white;
+    min-height: 1000px;
+    font-family: "helvetica neue";
+    box-sizing: border-box;
+}
+
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: stretch; */
+  min-height: 95vh;
+}
+
+/* Box to contain lists, items and delete  */
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+/* Input text general  */
+input[type="text"] {
+  /* box-shadow: inset 0 -3px 0 0 #e5e5e5; */
+  text-align: left;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 80%;
+  
+}
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #e5e5e5;
+}
+
+/* Placeholder */
+::placeholder {
+  color: lightgray;
+  opacity: 1;
+}
+
+
+
+/* Users bar */
+.tab-view {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-size: 0;
+  text-align: left;
+  font-family:"Helvetica Neue";
+}
+
+.tab-view > input {
+  position: absolute;
+  display: none;
+}
+
+.tab-view > label {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  outline: none;
+  padding: 0 15px;
+  background: #e5e5e5;
+  font-size: 1.7rem;
+  line-height: 49px;
+  color:#484646;
+}
+
+.tab-view > label:hover {
+  background: #f2f2f2;
+}
+.tab-view > input:hover {
+  background: #262222;;
+  
+}
+
+
+
+/* Lists */
+
+/* List title */
+/* Default background color  */
+#heading {
+  background-color: #a683e3;
+}
+/* Heading list Title  */
+#heading h1 {
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Edit lists buttons */
+.listEdit{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.listEdit form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Edit and done list buttons  */
+.listEdit button{
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #fff;
+  font-size: 30px;
+  border-width: 0;
+}
+
+/* List edit name form text input  */
+input[type="text"].editList {
+  text-align: center;
+  margin-bottom: 10px;
+  color:#fff;
+  padding: 10px;
+  height: 60px;
+  background: transparent;
+  font-size: 36px;
+  font-weight: 500;
+  box-shadow: inset 0 -3px 0 0 #fff;
+}
+/* Focus text  */
+/* It defailts for the the form focus text otherwise */
+input[type="text"].editList:focus {
+  outline: none;
+  /* box-shadow: inset 0 -3px 0 0 #545456; */
+  /* background-color: #fff; */
+}
+
+
+
+/* List Delete*/
+.listDelete {
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Delete button  */
+.listDelete button {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #fff ;
+  color: #a683e3;
+  font-size: 30px;
+  border-width: 0;
+}
+
+
+/* Add new list button  */
+.newList form{
+  text-align: center;
+}
+
+
+
+/* Items*/
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.item form {
+  /* text-align: center; */
+  margin-left: 20px;
+}
+
+.item p {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 18px;
+  color: #00204a;
+  /* text-align: left; */
+}
+
+/* Edit form  */
+form.edit {
+  display: flex;
+  text-align: center;
+}
+
+/* Edit Item  icons */
+.icon {
+  height: 20px;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+/* Edit Items button  */
+button.edit {
+  margin-right: 20px;
+  border: none;
+  background: none;
+}
+
+/* Delete Checkbox */
+input[type="checkbox"] {
+  margin: 20px;
+  margin-left: 0;
+}
+
+
+/* Add button  */
+button.add {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  /* Default color  */
+  background-color: #a683e3;
+  color: #fff;
+  font-size: 30px;
+  border-width: 0;
+  margin-right: 10px;
+}
+
+
+/* Add item input text  */
+.addItem input[type="text"] {
+  padding-left: 21px;
+}
+
+/* Footer */
+footer {
+  flex: 0 0 auto;
+  background-color:#e5e5e5;
+  text-align: center;
+  padding: 25px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-family: "helvetica neue";
+  color:#484646;
+}
+
+
+
+

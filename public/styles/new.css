@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  transform: translate(-35%, -35%);
+  color:#00204a;
+  font-family: "Roboto";
+}
+
+h1 {
+  color: #00204a;
+  font-family: "Roboto";
+}
+
+input[type="text"] {
+  text-align: left;
+  height: 60px;
+  top: 10px;
+  border: black;
+  background: #f9f9f9;
+  font-size: 20px;
+  font-weight: 200;
+  width: 80%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #a683e3;
+}
+
+/* User color radios  */
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked + label span {
+  transform: scale(1.25);
+}
+
+input[type="radio"]:checked + label .c1 {
+  border: 2px solid  #FFE1FF
+}
+input[type="radio"]:checked + label .c2 {
+  border: 2px solid #7E60BF;
+}
+input[type="radio"]:checked + label .c3 {
+  border: 2px solid #ff9854;
+}
+input[type="radio"]:checked + label .c4 {
+  border: 2px solid #d573f5;
+}
+input[type="radio"]:checked + label .c5 {
+  border: 2px solid #E4B1F0  ;
+}
+input[type="radio"]:checked + label .c6 {
+  border: 2px solid #6a93d9;
+}
+input[type="radio"]:checked + label .c7 {
+  border: 2px solid #a683e3;
+}
+
+/* User colors span  */
+label {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+label:hover span {
+  transform: scale(1.25);
+}
+label span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+label span.c1 {
+  background: #FFE1FF;
+}
+label span.c2 {
+  background: #7E60BF;
+}
+label span.c3 {
+  background:#ff9854;
+}
+label span.c4 {
+  background:#d573f5;
+}
+label span.c5 {
+  background:  #E4B1F0;
+}
+label span.c6 {
+  background: #6a93d9;
+}
+label span.c7 {
+  background: #a683e3;
+}
+
+
+/* bottstrap overwrite  */
+.btn-primary{
+  background-color: #a683e3 ;
+  border-color:  #a683e3 ;
+}
+.btn{
+  font-size: 18px;
+}
+.btn-primary:hover{
+  background-color: #E4B1F0;
+}

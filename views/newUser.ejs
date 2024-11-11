@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Family to do list App">
+    <meta name="keywords" content="to do list, lists , family ">
+    <meta name="author" content="Monica Spycher">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/new.css">
+    <title>New User</title>
+  </head>
+
+  <body>
+    <h1>Add a Family Member</h1>
+    <form action="/new" method="post">
+      <p>What's your name?</p>
+      <input type="text" name="name" required>
+
+      <p>Pick a color:</p>
+    
+      <input type="radio" name="color" id="c1" value=" #FFE1FF" />
+      <label for="c1"><span class="c1"></span></label>
+
+      <input type="radio" name="color" id="c2" value="#7E60BF" />
+      <label for="c2"><span class="c2"></span></label>
+
+      <input type="radio" name="color" id="c3" value="#ff9854" />
+      <label for="c3"><span class="c3"></span></label>
+
+      <input type="radio" name="color" id="c4" value="#d573f5" />
+      <label for="c4"><span class="c4"></span></label>
+
+      <input type="radio" name="color" id="c5" value="#E4B1F0" />
+      <label for="c5"><span class="c5"></span></label>
+    
+      <input type="radio" name="color" id="c6" value="#6a93d9" />
+      <label for="c6"><span class="c6"></span></label>
+
+      <input type="radio" name="color" id="c7" value="#a683e3" />
+      <label for="c7"><span class="c7"></span></label>
+
+      <div class="spacer"></div>
+      <br>
+      <button class="btn btn-primary"type="submit">Add</button>
+    </form>
+    <!-- Bootstrap JS scripts   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
