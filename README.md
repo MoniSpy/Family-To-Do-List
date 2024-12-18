@@ -10,4 +10,4 @@ How to run this project locally:
 3.	Run the commands from the file Queries.sql to create the schema for the database  
 4.	Run npm install to install all dependencies.
 5.	Run index.js to start the server. (If you would like to make changes to the project use comand nodemon index.js to start the server- nodemon restarts the server for you authomatically everytime you make a change and save it).
-6.	Server will run on port 3000, open http://localhost:3000/to view the web application.
+6.	Server will run on port 3000, open http://localhost:3000 to view the web application.
