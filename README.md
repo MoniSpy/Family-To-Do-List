@@ -3,7 +3,7 @@ Description:
 This is a Web Application made using the Express/Node.js platform and PostgreSQL.
 This application allows the user to create different to do lists for individual Users. You can add, and delete users, lists and tasks. 
 
-How to run your this project locally:
+How to run this project locally:
 
 1.	Download the files to a local folder.
 2.	Create a PostgreSQL database
